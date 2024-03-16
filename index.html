@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulaire</title>
+</head>
+<body>
+
+<form id="myForm">
+  <label for="name">Nom:</label><br>
+  <input type="text" id="name" name="name"><br>
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email"><br><br>
+  <button type="submit">Envoyer</button>
+</form>
+
+<script>
+document.getElementById('myForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Empêcher le formulaire d'être soumis normalement
+
+  // Capturer les valeurs des champs
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+
+  // Vous pouvez maintenant utiliser ces valeurs pour les stocker localement ou les envoyer à un autre appareil
+  console.log('Nom:', name);
+  console.log('Email:', email);
+
+  // Exemple de stockage local (LocalStorage)
+  localStorage.setItem('nom', name);
+  localStorage.setItem('email', email);
+
+  // Redirection vers une autre page ou autre action si nécessaire
+});
+</script>
+
+</body>
+</html>
